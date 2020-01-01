@@ -3,11 +3,11 @@
 
 import os
 
-DATABASE_USERNAME = 'postgres'
-DATABASE_HOSTNAME = 'postgres'
-DATABASE_PASSWORD = ''
+DATABASE_USERNAME = 'hoskere2'
+DATABASE_HOSTNAME = '127.0.0.1'
+DATABASE_PASSWORD = 'abcde123'
 DATABASE_NAME = 'instadam'
-FLASK_SECRETE_KEY = ''
+FLASK_SECRETE_KEY = 'h'
 if '_DB_USERNAME' in os.environ and os.environ['_DB_USERNAME'] is not None:
     DATABASE_USERNAME = os.environ['_DB_USERNAME']
 if '_DB_PASSWORD' in os.environ and os.environ['_DB_PASSWORD'] is not None:
@@ -19,7 +19,7 @@ if '_DB_HOSTNAME' in os.environ and os.environ['_DB_HOSTNAME'] is not None:
 if '_DB_NAME' in os.environ and os.environ['_DB_NAME'] is not None:
     DATABASE_NAME = os.environ['_DB_NAME']
 
-INSTADAM_STORAGE = 'static-dir'
+INSTADAM_STORAGE = 'static'
 if ('INSTADAM_STORAGE' in os.environ
         and os.environ['INSTADAM_STORAGE'] is not None):
     INSTADAM_STORAGE = os.environ['INSTADAM_STORAGE']

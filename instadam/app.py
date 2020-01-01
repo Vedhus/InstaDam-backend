@@ -21,7 +21,7 @@ def create_app(mode='development'):
     Returns:
         The initialized Flask application.
     """
-    app = Flask(__name__, instance_relative_config=True)
+    app = Flask(__name__,instance_relative_config=True)
     app.config.from_object(app_config[mode])
     db.init_app(app)
     jwt.init_app(app)
@@ -43,6 +43,9 @@ def create_app(mode='development'):
 
     from . import user
     app.register_blueprint(user.bp)
+    
+    path = "instadam/"
+    os.chdir(path)
 
     if not os.path.isdir(app.config['STATIC_STORAGE_DIR']):
         os.mkdir(app.config['STATIC_STORAGE_DIR'])
